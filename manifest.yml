@@ -6,7 +6,7 @@ applications:
     instances: 2
     memory: 1G
     path: target/VertxCluster-1.0.0-SNAPSHOT.jar
-    buildpack: java_buildpack_offline
+    buildpack: java_buildpack
     env:
       spring.application.name: VertxCluster
       hazelcast.port: 5701
