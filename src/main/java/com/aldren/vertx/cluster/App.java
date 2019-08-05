@@ -35,12 +35,7 @@ public class App
         Vertx.clusteredVertx(options.setEventLoopPoolSize(2), cluster -> {
             if(cluster.succeeded()) {
                 Vertx vertx = cluster.result();
-                vertx.deployVerticle(server, deploy -> {
-                    if(deploy.failed()) {
-                        System.out.println("Deploy failed...");
-                        vertx.close();
-                    }
-                });
+                vertx.deployVerticle(server);
                 vertx.deployVerticle(dispatcher);
             }
         });
